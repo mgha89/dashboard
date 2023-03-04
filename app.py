@@ -6,6 +6,9 @@ from config import Development
 from flask_migrate import Migrate
 from flask_mail import Mail
 from flask_dance.contrib.github import make_github_blueprint, github
+from flask_moment import Moment
+from flask_ckeditor import CKEditor  
+
 
 
 
@@ -32,8 +35,12 @@ db = SQLAlchemy(app)
 
 migrate = Migrate(app, db)
 
-
 mail = Mail(app)
+
+moment = Moment(app)
+
+ckeditor = CKEditor(app) 
+
 
 
 
@@ -50,10 +57,22 @@ def index():
 # ================= ADD_BLUEPRINTS =============================
 from auth import auth
 from admin import admin
+from blog import blog
+from events import events
+from social import social
+from shopping import shopping
+
+
+
 
 
 app.register_blueprint(auth)
 app.register_blueprint(admin)
+app.register_blueprint(blog)
+app.register_blueprint(events)
+app.register_blueprint(social)
+app.register_blueprint(shopping)
+
 # ================= END_OF_BLUEPRINTS ==========================
 
 
@@ -110,7 +129,6 @@ def NotFound(error):
 
 
 if __name__ == '__main__':
-    os.environ.setdefault('FLASK_ENV', 'development')
-
-    app.run(debug=True)
+    #os.environ.setdefault('FLASK_ENV', 'development')
+    app.run()
     

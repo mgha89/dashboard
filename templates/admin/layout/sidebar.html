@@ -111,6 +111,222 @@
             </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-database"></i>
+                <p>
+                  وبلاگ
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ url_for('blog.posts') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> لیست اخبار </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('blog.post_create') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> ایجاد خبر جدید </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('admin.user_edit', user_id=current_user.id) }}" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p> ویرایش کاربر </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('admin.user_create') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> افزودن کاربر </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/charts/inline.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> حذف کاربر </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  {% if current_user.phone_auth %}
+                  <div class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> {{current_user.phone}}</p>
+                  </div>
+                  {% else %}
+                  <a href="{{url_for('auth.phone_register')}}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> احراز هویت شماره همراه </p>
+                  </a>
+                  {% endif %}
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-calendar"></i>
+                <p>
+                  مناسبت ها
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ url_for('events.calendar') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>  نمایش تقویم </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('blog.post_create') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> ایجاد مناسبت جدید </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('admin.user_edit', user_id=current_user.id) }}" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p> ویرایش مناسبت </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('admin.user_create') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> افزودن مناسبت </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/charts/inline.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> حذف مناسبت </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  {% if current_user.phone_auth %}
+                  <div class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> {{current_user.phone}}</p>
+                  </div>
+                  {% else %}
+                  <a href="{{url_for('auth.phone_register')}}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> احراز هویت شماره همراه </p>
+                  </a>
+                  {% endif %}
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-link"></i>
+                <p>
+                   شبکه اجتماعی
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ url_for('social.index', username=current_user.name) }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> صفحه اصلی </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('blog.post_create') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> ایجاد مناسبت جدید </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('admin.user_edit', user_id=current_user.id) }}" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p> ویرایش مناسبت </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('admin.user_create') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> افزودن مناسبت </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/charts/inline.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> حذف مناسبت </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  {% if current_user.phone_auth %}
+                  <div class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> {{current_user.phone}}</p>
+                  </div>
+                  {% else %}
+                  <a href="{{url_for('auth.phone_register')}}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> احراز هویت شماره همراه </p>
+                  </a>
+                  {% endif %}
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-link"></i>
+                <p>
+                    فروشگاه
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ url_for('shopping.products_list') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>  لیست محصولات </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('shopping.product_new') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> ایجاد محصول جدید </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('shopping.category_create') }}" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>  دسته بندی جدید </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('admin.user_create') }}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> افزودن مناسبت </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/charts/inline.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> حذف مناسبت </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  {% if current_user.phone_auth %}
+                  <div class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> {{current_user.phone}}</p>
+                  </div>
+                  {% else %}
+                  <a href="{{url_for('auth.phone_register')}}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> احراز هویت شماره همراه </p>
+                  </a>
+                  {% endif %}
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-tree"></i>
                 <p>
                   اشیای گرافیکی

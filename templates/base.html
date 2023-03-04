@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/iCheck/flat/blue.css') }}">
@@ -15,9 +16,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
     <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fullcalendar/fullcalendar.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fullcalendar/fullcalendar.print.css', media='print')  }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-rtl.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom-style.css') }}">
-    
+
+    {{ moment.include_moment() }}
+    {{ moment.lang("fa") }}
+    {{ moment.locale("fa") }}
+
     <title>{% block title %}{% endblock %}</title>
     
 </head>
@@ -51,7 +58,10 @@
     <script src="{{ url_for('static', filename='js/adminlte.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/ckediter.js') }}"></script>
     <script src="{{ url_for('static', filename='js/demo.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+    <script src="{{ url_for('static', filename='plugins/fullcalendar/fullcalendar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ajax-scripts.js') }}"></script>
     
 </body>
 </html>

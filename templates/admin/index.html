@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 
 <div class="wrapper">
   <!-- Navbar -->
@@ -14,6 +15,7 @@
     <div class="offset-md-3 col-md-6">
       {% include 'flash.html' %}
     </div>
+    
     {% block admin_content %}{% endblock %}
   </div>
   <!-- /.content-wrapper -->

@@ -25,7 +25,15 @@ class Config(object):
     GITHUB_OAUTH_CLIENT_SECRET = os.getenv('GITHUB_OAUTH_CLIENT_SECRET')
     OAUTHLIB_INSECURE_TRANSPORT = os.getenv('OAUTHLIB_INSECURE_TRANSPORT')
     CSRF_ENABLED = os.getenv('CSRF_ENABLED')
+     # ========================================================================================
+    CKEDITOR_PKG_TYPE = os.getenv('CKEDITOR_PKG_TYPE')
+    CKEDITOR_SERVE_LOCAL = os.getenv('CKEDITOR_SERVE_LOCAL')
+    CKEDITOR_LANGUAGE = os.getenv('CKEDITOR_LANGUAGE')
+    CKEDITOR_FILE_UPLOADER = os.getenv('CKEDITOR_FILE_UPLOADER')
 
+
+    # UPLOAD_FOLDER = ''
+    # MAX_CONTENT_PATH = ''
     
 
 

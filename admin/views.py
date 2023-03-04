@@ -1,4 +1,3 @@
-from genericpath import exists
 import os
 import datetime
 from queue import Empty
